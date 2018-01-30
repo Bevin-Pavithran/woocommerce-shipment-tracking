@@ -1,5 +1,13 @@
 *** Shipment Tracking Changelog ***
 
+2018-01-25 - version 1.6.10
+* Fix - Ensures a vertical space below the tracking information in HTML emails.
+* Fix - Ensure the "Date" label is shown correctly when viewing tracking information on a mobile device.
+* Tweak - Hide the "Track" button if no tracking URL is present.
+
+2017-12-14 - version 1.6.9
+* Add - WC minimum requirements to header.
+
 2017-06-07 - version 1.6.8
 * Tweak - Added services for Romania.
 * Tweak - Added support for WC API v2.

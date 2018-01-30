@@ -3,13 +3,15 @@
  * Plugin Name: WooCommerce Shipment Tracking
  * Plugin URI: https://woocommerce.com/products/shipment-tracking/
  * Description: Add tracking numbers to orders allowing customers to track their orders via a link. Supports many shipping providers, as well as custom ones if neccessary via a regular link.
- * Version: 1.6.8
+ * Version: 1.6.10
  * Author: WooCommerce
  * Author URI: https://woocommerce.com
  * Text Domain: woocommerce-shipment-tracking
  * Domain Path: /languages
+ * WC requires at least: 2.6
+ * WC tested up to: 3.3
  *
- * Copyright: © 2009-2016 WooCommerce.
+ * Copyright: © 2009-2017 WooCommerce.
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  *
@@ -34,7 +36,7 @@ if ( ! function_exists( 'woothemes_queue_update' ) ) {
  */
 woothemes_queue_update( plugin_basename( __FILE__ ), '1968e199038a8a001c9f9966fd06bf88', '18693' );
 
-define( 'WC_SHIPMENT_TRACKING_VERSION', '1.6.8' );
+define( 'WC_SHIPMENT_TRACKING_VERSION', '1.6.10' );
 
 if ( is_woocommerce_active() ) {
 
