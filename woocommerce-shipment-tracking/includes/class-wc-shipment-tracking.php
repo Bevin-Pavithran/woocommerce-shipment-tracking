@@ -50,7 +50,7 @@ class WC_Shipment_Tracking_Actions {
 				'Correios' => 'http://websro.correios.com.br/sro_bin/txect01$.QueryList?P_LINGUA=001&P_TIPO=001&P_COD_UNI=%1$s',
 			),
 			'Belgium' => array(
-				'bpost' => 'http://track.bpost.be/etr/light/showSearchPage.do?oss_language=EN',
+				'bpost' => 'https://track.bpost.be/btr/web/#/search?itemCode=%1$s',
 			),
 			'Canada' => array(
 				'Canada Post' => 'http://www.canadapost.ca/cpotools/apps/track/personal/findByTrackNumber?trackingNumber=%1$s',
@@ -284,6 +284,11 @@ enericSiteIdent=',
 		echo '</select> ';
 
 		woocommerce_wp_hidden_input( array(
+			'id'    => 'wc_shipment_tracking_get_nonce',
+			'value' => wp_create_nonce( 'get-tracking-item' ),
+		) );
+
+		woocommerce_wp_hidden_input( array(
 			'id'    => 'wc_shipment_tracking_delete_nonce',
 			'value' => wp_create_nonce( 'delete-tracking-item' ),
 		) );
@@ -409,6 +414,24 @@ enericSiteIdent=',
 
 			$this->add_tracking_item( $post_id, $args );
 		}
+	}
+
+	/**
+	 * Order Tracking Get All Order Items AJAX
+	 *
+	 * Function for getting all tracking items associated with the order
+	 */
+	public function get_meta_box_items_ajax() {
+		check_ajax_referer( 'get-tracking-item', 'security', true );
+
+		$order_id = wc_clean( $_POST['order_id'] );
+		$tracking_items = $this->get_tracking_items( $order_id );
+
+		foreach ( $tracking_items as $tracking_item ) {
+			$this->display_html_tracking_item_for_meta_box( $order_id, $tracking_item );
+		}
+
+		die();
 	}
 
 	/**

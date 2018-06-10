@@ -1,5 +1,12 @@
 *** Shipment Tracking Changelog ***
 
+2018-05-23 - version 1.6.11
+* Fix    - Belgian Shipping Provider BPOST tracking link does not work.
+* Fix    - Prevent updater from running more than once.
+* Update - Privacy policy notification.
+* Update - Export/erasure hooks added.
+* Update - WC 3.4 compatibility.
+
 2018-01-25 - version 1.6.10
 * Fix - Ensures a vertical space below the tracking information in HTML emails.
 * Fix - Ensure the "Date" label is shown correctly when viewing tracking information on a mobile device.
